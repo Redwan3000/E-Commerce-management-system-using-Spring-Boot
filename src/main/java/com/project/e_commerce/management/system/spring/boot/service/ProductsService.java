@@ -17,11 +17,10 @@ public class ProductsService {
     private final ProductsRepository productsRepository;
     private final CategoriesRepository categoriesRepository;
 
-    // returns true if product added, false if category not found
+
     public boolean addProduct(ProductsDTO dto) {
         Optional<Categories> categoryOpt = categoriesRepository.findById(dto.getCategoryId());
         if (categoryOpt.isEmpty()) {
-            // Category not found, don't add product
             return false;
         }
 

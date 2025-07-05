@@ -20,7 +20,7 @@ public class OrdersService {
     private final CartsRepository cartsRepository;
     private final AddressRepository addressRepository;
 
-    // Create Order
+
     public Orders createOrder(OrdersDTO ordersDTO) {
         Orders order = new Orders();
         order.setOrder_date(ordersDTO.getOrder_date());
@@ -40,7 +40,7 @@ public class OrdersService {
         return ordersRepository.save(order);
     }
 
-    // Update Order Status
+
     public Orders updateOrderStatus(int id, String newStatus) {
         Orders order = ordersRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + id));

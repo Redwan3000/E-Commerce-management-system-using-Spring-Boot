@@ -17,7 +17,6 @@ public class PaymentController {
         return paymentsService.createPayment(paymentDTO);
     }
 
-    // API: Get Payment Details
     @GetMapping("/user/payment-details/{id}")
     public Payment paymentDetails(@PathVariable int id) {
         return paymentsService.getPaymentById(id);

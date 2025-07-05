@@ -25,7 +25,7 @@ public class CartsService {
         return cartsRepository.save(cart);
     }
 
-    // Get Cart By Id
+
     public Carts getCartById(int id) {
         return cartsRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Cart not found with id: " + id));

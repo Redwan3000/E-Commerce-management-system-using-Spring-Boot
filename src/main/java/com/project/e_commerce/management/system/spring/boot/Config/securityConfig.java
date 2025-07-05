@@ -33,7 +33,7 @@ public class securityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // ✅ Disable CSRF for Swagger to work with POST/PUT
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/swagger-ui/**",
@@ -46,7 +46,7 @@ public class securityConfig {
                         .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated()
                 )
-                .httpBasic(Customizer.withDefaults()); // ✅ Only keep httpBasic for Swagger compatibility
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }

@@ -12,7 +12,7 @@ import java.util.List;
 public class UsersController {
 
 
-    private final UsersService usersService;  // make final for Lombok
+    private final UsersService usersService;
 
     @PostMapping("/user/add_users")
     public void createUser(@RequestBody UsersDTO usersDTO) {
